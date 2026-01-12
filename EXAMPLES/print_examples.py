@@ -15,5 +15,16 @@ print(city, temperature, hit_count, average, sep=", ")
 print()
 
 # Item separator is empty string
-print(city, temperature, hit_count, average, sep="")
+print(city, temperature, hit_count, average, sep="\n")
 print()
+# default behavior
+print(city, temperature, hit_count, average, sep=" ", end="\n")
+print()
+print(city + ", " +  str(temperature))
+print(f"{city}, {10 * temperature}")  # f-string AKA format string
+
+print(f"Average is {average}")
+print("Average is {}".format(average))  # .format() METHOD
+print(f"Average is {average:.2f}")
+pct = .234323
+print(f"Average is {pct:.2%}")
