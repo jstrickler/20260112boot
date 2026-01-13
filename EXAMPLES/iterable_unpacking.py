@@ -13,10 +13,16 @@ people = [
     ('Mark', 'Zuckerberg', 'Facebook'),
     ('Sergey', 'Brin', 'Google'),
     ('Larry', 'Page', 'Google'),
-    ('Linux', 'Torvalds', 'Linux'),
+    ('Linus', 'Torvalds', 'Linux'),
 ]
+print(f"{people[0] = }")
+print(f"{people[0][0] = }")
+print(f"{people[-1][0][-1] = }")
+print('-' * 60)
+
 
 for row in people:
+    print(f"{row = }")
     first_name, last_name, _ = row  # unpack row into variables
     print(first_name, last_name)
 print()

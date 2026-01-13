@@ -1,7 +1,7 @@
 fruits = ['apple', 'cherry', 'orange', 'kiwi', 'banana', 'pear', 'fig'] # list
 full_name = "Guido van Rossum"  # str
 place = "Durham", "NC"  # tuple
-data = b'wombat'   # bytes
+data = b'wombat 12\u00B0'   # bytes
 
 
 print(f"{fruits = }")
@@ -14,4 +14,4 @@ print(f"{place = }")
 print(f"place[1]: {place[1]}    len(place): {len(place)}\n")
 
 print(f"{data = }")
-print(f"data[4]: {data[4]}   len(data): {len(data)}\n")
+print(f"data[9]: {data[9]}   len(data): {len(data)}\n")

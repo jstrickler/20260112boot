@@ -33,3 +33,7 @@ print(f"city: {city}")
 print(f"cities: {cities}\n")
 
 # del LIST[idx]  LIST.remove(value) LIST.pop() LIST.pop(idx)    
+
+spam = [1, 2, 3]
+x = spam.pop()
+print(f"{x = }")

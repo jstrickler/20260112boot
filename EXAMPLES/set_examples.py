@@ -24,5 +24,5 @@ with open('../DATA/breakfast.txt') as breakfast_in:
 print(f"{food = }")
 print()
 
-unique_food = set(food)  # Create set from iterable (e.g., list)
+unique_food = sorted(set(food))  # Create set from iterable (e.g., list)
 print(f"{unique_food = }")

@@ -11,4 +11,12 @@ with open(FILE_PATH) as mary_in:  # open file for reading
         # from end of string
         line = raw_line.rstrip()
         print(line)
+    # mary_in.close()  magic!!!
+# mary_in.close() not needed here
 
+
+with open('../DATA/presidents.txt') as pres_in:
+    for raw_line in pres_in:
+        if "James" in raw_line:
+            fields = raw_line.split(':')
+            print(fields[2], fields[1])

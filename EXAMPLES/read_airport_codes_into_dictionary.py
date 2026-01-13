@@ -27,7 +27,7 @@ def read_data():
             code = line[:3]  # first three chars
             airport = line[4:]  # fourth char through end
             codes[code] = airport
-        return codes
+    return codes
 
 if __name__ == "__main__":
     main()

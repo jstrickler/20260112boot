@@ -2,6 +2,8 @@ colors = "red blue green yellow brown black".split()
 
 months = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
 
+print(f"{colors = }")
+
 colors_enum = enumerate(colors)
 print(f"{colors_enum = }")
 print(f"{list(colors_enum) = }\n")  # consumes enumerate values
