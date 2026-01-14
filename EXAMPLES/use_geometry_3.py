@@ -1,3 +1,8 @@
+# import MODULE
+# MODULE.NAME
+
+# from MODULE import NAME, ...
+# NAME
 from geometry import circle_area, rectangle_area, square_area
 
 circle = circle_area(8)

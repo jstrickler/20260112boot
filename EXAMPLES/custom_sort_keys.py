@@ -10,9 +10,17 @@ fs1 = sorted(fruit, key=ignore_case)  # Specify function with named parameter ke
 print("Ignoring case:")
 print(f"fs1: {fs1}\n")
 
+def weird_key(s):
+    return s[-1]
+
+weird_sort = sorted(fruit, key=weird_key)
+print(f"{weird_sort = }\n")
+
+fs1 = sorted(fruit, key=str.lower)  # ignore case the easy way
+
 
 def by_length_then_name(item):
-    return (len(item), item.lower())  # Key functions can return tuple of values to compare, in order
+    return len(item), item.lower()  # Key functions can return tuple of values to compare, in order
 
 fs2 = sorted(fruit, key=by_length_then_name)
 print("By length, then name:")

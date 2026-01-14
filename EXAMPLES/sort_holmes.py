@@ -11,6 +11,19 @@ books = [
     "The Case-Book of Sherlock Holmes",
 ]
 
+#  123 Other Stuff
+#  4567 More stuff
+import re
+
+def sort_by_other_stuff(item):
+    words = item.split()
+    return ' '.join(words[1:])
+    # or
+    number, other_stuff = item.split(" ", 1)
+
+print(sort_by_other_stuff("123 abc def"))
+
+
 
 def strip_article(title):  # create function which takes element to compare and returns comparison key
     title = title.lower()

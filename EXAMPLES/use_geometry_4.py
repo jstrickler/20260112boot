@@ -1,4 +1,4 @@
-from geometry import *
+from geometry import *  # import all names if they don't start with "_"
 
 circle = circle_area(8)
 print(f"{circle = }")

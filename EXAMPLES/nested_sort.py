@@ -19,7 +19,7 @@ for first_name, last_name, organization, dob in sorted(computer_people):
 print('-' * 60)
 
 # sort by last name
-for first_name, last_name, organization, dob in sorted(computer_people, key=lambda e: e[1]):  # Select element of nested tuple for sorting
+for first_name, last_name, organization, dob in sorted(computer_people, key=lambda e: (e[1], e[0])):  # Select element of nested tuple for sorting
     print(first_name, last_name, organization, dob)
 print('-' * 60)
 

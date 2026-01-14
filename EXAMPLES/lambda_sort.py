@@ -5,6 +5,8 @@ fruit = ["pomegranate", "cherry", "apricot", "date", "Apple",
 
 nums = [800, 80, 1000, 32, 255, 400, 5, 5000]
 
+# lambda param, ...: (return-value1, return-value2)
+
 fs1 = sorted(fruit, key=lambda e: e.lower())  # lambda returns key function that converts each element to lower case
 print("Ignoring case:")
 print(' '.join(fs1))

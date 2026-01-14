@@ -1,0 +1,4 @@
+import johnlib # no .py
+
+result = johnlib.square_root(100)
+print(f"{result = }")
