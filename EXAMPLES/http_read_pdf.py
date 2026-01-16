@@ -6,7 +6,7 @@ import requests
 url = 'https://www.nasa.gov/wp-content/uploads/2021/12/sls_fact_sheet.pdf'  # target URL
 saved_pdf_file = 'nasa.pdf'  # name of PDF file for saving
 
-response = requests.get(url)  # open the URL
+response = requests.get(url, timeout=(5, 10))  # open the URL
 if response.ok:  # check status code
     if response.headers.get('content-type') == 'application/pdf':
         with open(saved_pdf_file, 'wb') as pdf_out:  # open local file

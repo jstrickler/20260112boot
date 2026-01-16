@@ -12,31 +12,34 @@ def main(args):
         print("Please specify a search term")
         sys.exit(1)
 
-    response = requests.get(
-        BASE_URL + args[0],
-        params={'key': API_KEY},
-        # ssl, proxy, cookies, headers, etc.
-    )  # send HTTP request and get HTTP response
+    with requests.Session() as session:
 
-    if response.status_code == requests.codes.OK:  # 200?
-        data = response.json()  # convert JSON content to Python data structure
-        for entry in data: # check for results
-            if isinstance(entry, dict):
-                meta = entry.get("meta")
-                if meta:
-                    part_of_speech = f'({entry.get("fl")})'
-                    word_id = meta.get("id")
-                    print(f"{word_id.upper()} {part_of_speech}")
-                if "shortdef" in entry:
-                    print('\n'.join(entry['shortdef']))
-                print()
+        session.params.update({'key': API_KEY})
+
+        for word in args:
+            response = session.get(
+                BASE_URL + word,  # URL with search term
+            )
+
+            if response.status_code == requests.codes.OK:  # 200?
+                data = response.json()  # convert JSON content to Python data structure
+                for entry in data: # check for results
+                    if isinstance(entry, dict):
+                        meta = entry.get("meta")
+                        if meta:
+                            part_of_speech = f'({entry.get("fl")})'
+                            word_id = meta.get("id")
+                            print(f"{word_id.upper()} {part_of_speech}")
+                        if "shortdef" in entry:
+                            print('\n'.join(entry['shortdef']))
+                        print()
+                    else:
+                        print(entry)
+                # print('*' * 60)
+                # pprint(data)
+                # print('*' * 60)
             else:
-                print(entry)
-        print('*' * 60)
-        pprint(data)
-        print('*' * 60)
-    else:
-        print("Sorry, HTTP response", response.status_code)
+                print("Sorry, HTTP response", response.status_code)
 
 if __name__ == '__main__':
     main(sys.argv[1:])

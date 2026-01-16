@@ -4,7 +4,7 @@ URL = 'https://www.python.org'
 
 response = requests.get(URL)
 
-if response.ok:
+if response.ok:  # if response.status_code < 300
     for header, value in sorted(response.headers.items()): # response.headers is a dictionary of the headers
         print(f"{header:20.20s} {value}")
     print()
