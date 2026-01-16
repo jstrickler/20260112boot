@@ -1,7 +1,6 @@
-import sys
 import re
 import fileinput
-from argparse import ArgumentParser
+import argparse
 
 # from X import y
 # import X; X.y
@@ -19,7 +18,7 @@ def do_search(args):
             print(raw_line.rstrip())
 
 def get_args():
-    parser = ArgumentParser(
+    parser = argparse.ArgumentParser(
         description="""
             Faux Grep
 

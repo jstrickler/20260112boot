@@ -24,7 +24,7 @@ print('-' * 60)
 
 # \b[a-z]{8,}}\b
 
-def grep2(search_term, *file_path_list):
+def grep2(search_term: str, *file_path_list: ):
     for file_path in file_path_list: # file_path_list is a tuple of args
         with open(file_path) as file_in:
             for raw_line in file_in:
@@ -59,3 +59,12 @@ print('-' * 60)
 grep3('lizard', 'DATA/parrot.txt', 'DATA/words.txt', 'DATA/alice.txt')
 print('-' * 60)
 
+import typing  # as T
+
+def grep4(search_term: str, file_paths: typing.Iterable):
+    pass
+
+grep4('wombat', ['file1', 'file2' 'file3'])
+
+def foom(items: typing.Collection):
+    pass
