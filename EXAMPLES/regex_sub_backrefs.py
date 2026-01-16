@@ -10,7 +10,7 @@ officia deserunt Y-45 mollit anim id est laborum"""
 
 rx_code = re.compile(r'(?P<letter>[A-Z])-(?P<number>\d{2,3})', re.I)
 
-s2 = rx_code.sub(r"(\g<1>)[\g<2>]", s)
+s2 = rx_code.sub(r"(\g<1>)[\2]", s)
 print(f"s2: {s2}")
 print('-' * 60)
 

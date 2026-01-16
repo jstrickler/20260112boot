@@ -10,6 +10,9 @@ officia deserunt Y-45 mollit anim id est laborum"""
 
 line_start_word = r'^\w+'  # match word at beginning of string/line
 
+#   foo.*bar     re.S  re.DOTALL
+
+
 matches = re.findall(line_start_word, s)  # only matches at beginning of string
 print("matches:", matches)
 print()

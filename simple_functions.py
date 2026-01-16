@@ -22,6 +22,8 @@ def grep1(search_term, file_path):
 grep1('chicken', 'DATA/parrot.txt')
 print('-' * 60)
 
+# \b[a-z]{8,}}\b
+
 def grep2(search_term, *file_path_list):
     for file_path in file_path_list: # file_path_list is a tuple of args
         with open(file_path) as file_in:

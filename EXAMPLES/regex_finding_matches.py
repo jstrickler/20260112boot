@@ -8,15 +8,19 @@ voluptate velit esse cillum dolore U901 eu fugiat nulla pariatur.
 Excepteur sint occaecat A-110 cupidatat non proident, sunt in H-332 culpa qui 
 officia deserunt Y-45 mollit anim id est laborum"""
 
+# \b
+# text: backspace
+# re: word boundary
 pattern = r'[A-Z]-\d{2,3}'  # store pattern in raw string
 
 if re.search(pattern, s):  # search returns True on match
     print("Found pattern.")
 print()
 
+#   "abc(def)ghi(jkl)mno"
 m = re.search(pattern, s)  # search actually returns match object
 print(m)
-if m:
+if m:  # if successful match
     print("Found:", m.group(0))  # group(0) returns text that was matched by entire expression (or just m.group())
 print()
 

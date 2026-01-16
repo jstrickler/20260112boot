@@ -26,3 +26,12 @@ delta = d2 - d1  # date objects can be subtracted from other date objects
 print(f"delta: {delta}")  # timedelta has days, seconds, and microseconds
 print(f"delta.days: {delta.days}")
 
+# bad_date = datetime(2026, 4, 31)
+# print(f"{bad_date = }")
+
+jay_bd = date(2014, 8, 1)
+diff = today - jay_bd
+print(f"{diff.days = }")
+print(f"{diff.days // 365 = }")
+print(f"{diff.days % 365 = }")
+

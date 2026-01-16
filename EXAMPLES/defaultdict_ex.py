@@ -1,4 +1,5 @@
 from collections import defaultdict
+from pprint import pprint
 
 dd = defaultdict(lambda: 0)  # create default dict with function that returns 0
 
@@ -24,4 +25,5 @@ for fruit in fruits:
 
 for letter, fruits in sorted(fruit_info.items()):
     print(letter, fruits)
-
+print()
+pprint(fruit_info)

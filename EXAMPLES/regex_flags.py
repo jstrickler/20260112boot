@@ -9,7 +9,7 @@ Excepteur sint occaecat A-110 cupidatat non proident, sunt in H-332 culpa qui
 officia deserunt Y-45 mollit anim id est laborum"""
 
 pattern = r'[A-Z]-\d{2,3}'
-
+# re.IGNORECASE  re.I
 if re.search(pattern, s, re.IGNORECASE):  # make search case-insensitive
     print("Found pattern.")
 print()

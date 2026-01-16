@@ -4,13 +4,15 @@
 import sys
 import os
 
-MINIMUM_SIZE = 1000
+MINIMUM_SIZE = 10000
 
 if len(sys.argv) < 2: # make sure there is at least one command line argument
     print('Syntax: walk2.py START-DIR')
     sys.exit(1)
 
 for currdir, subdirs, files in os.walk(sys.argv[1]):
+    if '.git' in subdirs:
+        subdirs.remove('.git')  # skip folders named '.git'
     for file in files: # in each folder, iterate over files
         fullpath = os.path.join(currdir, file) # get full path to file
         if os.path.isfile(fullpath): # make sure it's a file (not a link or device, etc.)
